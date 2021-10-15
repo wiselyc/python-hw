@@ -1,12 +1,15 @@
 def tripler(func):
-    def wrapper():
+    """this decorator will call the function three times"""
+    def wrapper(*arg,**kwargs):
         func()
         func()
         func()
-    return wrapper()
+        #calls the function three times
+    return wrapper
 
 @tripler
 def test():
+    """this is a test function that will print hello"""
     print("hello")
 
 tripler(test)
