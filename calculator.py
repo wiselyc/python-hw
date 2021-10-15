@@ -6,13 +6,16 @@ def calculator(number1,number2,operator):
     elif operator == '*' :
         return number1 * number2
     elif operator == '//' :
-        return number1//number2
+        if number2 == 0:
+            return
+        else:
+            return number1//number2
     elif operator == '/' :
         return (float(number1)/float(number2))
     elif operator == '**' :
         return number1 ** number2
     else:
-        print("False")
+        return
 
 def parse_input(input_num1,input_num2,input_operator):
     number1 = input_num1
@@ -28,3 +31,4 @@ parse_input(5.5,3,'/')
 parse_input(2.2,5.1,'*')
 parse_input(10,2,'**')
 parse_input(12,4.2,'*')
+parse_input(10,0,"//")
