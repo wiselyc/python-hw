@@ -5,16 +5,12 @@ def calculate_time(func):
     def wrapper():
         '''created a wrapper function to take existing functions and 'wrap' them without changing them'''
         initial = time.time()
-        #takes the initial time
-        call_func = func()
-        #calls the function being timed
-        end = time.time()
-        #takes the time after running the function
-        totaltime = end - initial
-        # by getting the time from the beginning and the end you get the total run time
+        #gets the initial time
+        func()
+        #runs the function
+        totaltime = time.time() - initial
+        #gets the current time and subtracts it with initial time to get total time
         print("Total time: " + str(totaltime))
-        #prints the total runtime
-        return call_func
     return wrapper
 
 @calculate_time 
